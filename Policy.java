@@ -90,7 +90,7 @@ public class Policy
       return policyNo;
    }
    
-   public String getProvderName()
+   public String getProviderName()
    {
       return provider;
    }

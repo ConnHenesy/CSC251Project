@@ -55,7 +55,14 @@ public class Policy
       provider = prov;
    }
    
+   /**Mutater for the user's profile
+   @param1 A completed policyholder's profile
+   */
    
+   public void setUser(PolicyHolder u)
+   {
+      user = new PolicyHolder(u);
+   }
    
    //Getters
    
@@ -79,10 +86,35 @@ public class Policy
       return provider;
    }
    
+   /**
+   Accessor for the user's profile
+   @return A completed policyholder's profile
+   */
+   
+   public PolicyHolder getUser()
+   {
+      return new PolicyHolder(user);
+   }
+   
+   
+   /**
+   toString method
+   @return All of the information in a completed policy form
+   */
+   
+   public String toString()
+   {
+      String str = "Policy Number: " + policyNo;
+      str += "\nProvider Name: " + provider;
+      str += "\n" + user;
+      str += "\nPolicy Price: " + findPolicyPrice();
+      return str;
+   }
+   
    
    /**
    Calculator for the price of the user's policy plan
-   @param1 A completed policyholder's profile
+   @return The price of the policyholder's policy plan
    */
 
    public double findPolicyPrice()

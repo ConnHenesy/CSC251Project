@@ -1,41 +1,32 @@
 import java.util.Scanner;
+import java.io.*;
 
 public class Project_conn_henesy
 {
-   public static void main(String[] args)
+   public static void main(String[] args) throws FileNotFoundException
    {
-      Scanner keyboard = new Scanner(System.in);
+      File file = new File("PolicyInformation.txt");
+      Scanner inputFile = new Scanner(file);
       
-      System.out.print("Please enter the Policy Number: ");
-      int policyNo = keyboard.nextInt();
-      keyboard.nextLine();
+      int policyNo = inputFile.nextInt();
+      inputFile.nextLine();
+            
+      String provider = inputFile.nextLine();
       
-      System.out.print("Please enter the Provider Name: ");
-      String provider = keyboard.nextLine();
+      String firstName = inputFile.nextLine();
       
-      System.out.print("Please enter the Policyholder's First Name: ");
-      String firstName = keyboard.nextLine();
+      String lastName = inputFile.nextLine();
       
-      System.out.print("Please enter the Policyholder's Last Name: ");
-      String lastName = keyboard.nextLine();
+      int age = inputFile.nextInt();
+      inputFile.nextLine();
       
-      System.out.print("Please enter the Policyholder's Age: ");
-      int age = keyboard.nextInt();
-      keyboard.nextLine();
+      String smokingStatus = inputFile.nextLine();
       
-      System.out.print("Please enter the Policyholder's Smoking Status (smoker/non-smoker): ");
-      String smokingStatus = keyboard.nextLine();
-      while (!(smokingStatus.equals("smoker")) && !(smokingStatus.equals("non-smoker")))
-      {
-         System.out.print("Invalid selection. Please enter \"smoker\" or \"non-smoker\": ");
-         smokingStatus = keyboard.nextLine();
-      }
+      double height = inputFile.nextDouble();
+      inputFile.nextLine();
       
-      System.out.print("Please enter the Policyholder's Height (in inches): ");
-      double height = keyboard.nextDouble();
-      
-      System.out.print("Please enter the Policyholder's Weight (in pounds): ");
-      double weight = keyboard.nextDouble();
+      double weight = inputFile.nextDouble();
+      inputFile.nextLine();
 
 
 

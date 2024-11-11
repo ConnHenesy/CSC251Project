@@ -1,7 +1,5 @@
 public class PolicyHolder
 {
-   private int policyNo;
-   private String provider;
    private String firstName;
    private String lastName;
    private int age;
@@ -16,10 +14,8 @@ public class PolicyHolder
    No-arg constructor
    */
    
-   public Policy()
+   public PolicyHolder()
    {
-      policyNo = 0;
-      provider = "";
       firstName = "";
       lastName = "";
       age = 0;
@@ -28,23 +24,18 @@ public class PolicyHolder
       weight = 0;
    }
    
-   
    /**
    Constructor that takes arguments
-   @param num1 The user's policy number
-   @param num2 The user's provider's name
-   @param num3 The user's first name
-   @param num4 The user's surname
-   @param num5 The user's age
-   @param num6 Whether the user is a smoker ("smoker" or "non-smoker")
-   @param num7 The user's height, in inches
-   @param num8 The user's weight, in pounds
+   @param num1 The user's first name
+   @param num2 The user's surname
+   @param num3 The user's age
+   @param num4 Whether the user is a smoker ("smoker" or "non-smoker")
+   @param num5 The user's height, in inches
+   @param num6 The user's weight, in pounds
    */
    
-   public Policy(int no, String prov, String first, String last, int a, String smoke, double h, double w)
+   public PolicyHolder(String first, String last, int a, String smoke, double h, double w)
    {
-      policyNo = no;
-      provider = prov;
       firstName = first;
       lastName = last;
       age = a;
@@ -53,29 +44,25 @@ public class PolicyHolder
       weight = w;
    }
    
+   /**
+   Copy constructor
+   @param1 A completed PolicyHolder object
+   */
+   
+   public PolicyHolder(PolicyHolder user)
+   {
+      firstName = user.firstName;
+      lastName = user.lastName;
+      age = user.age;
+      smokingStatus = user.smokingStatus;
+      height = user.height;
+      weight = user.weight;
+   }
+   
+   
+   
    
    //Setters
-   
-   
-   /**
-   Mutater for the user's policy number
-   @param1 The user's policy number
-   */
-   
-   public void setPolicyNumber(int no)
-   {
-      policyNo = no;
-   }
-   
-   /**
-   Mutater for the user's provider's name
-   @param1 The user's provider's name
-   */
-   
-   public void setProviderName(String prov)
-   {
-      provider = prov;
-   }
    
    /**
    Mutater for the user's first name
@@ -138,29 +125,9 @@ public class PolicyHolder
    }
    
    
+   
    //Getters
 
-
-   /**
-   Accessor for the user's policy number
-   @return The user's policy number
-   */
-   
-   public int getPolicyNumber()
-   {
-      return policyNo;
-   }
-   
-   /**
-   Accessor for the user's provider's name
-   @return The user's provider's name
-   */
-   
-   public String getProviderName()
-   {
-      return provider;
-   }
-   
    /**
    Accessor for the user's first name
    @return The user's first name
@@ -222,17 +189,17 @@ public class PolicyHolder
    }
    
    
+   
    //Calculators
    
    /**
    Calculator for the user's body mass index (BMI)
-   @param1 The user's height
-   @param2 The user's weight
    @return The user's BMI
    */
    
-   public double findBMI(double height, double weight)
+   public double findBMI()
    {
       return ((weight*703)/(Math.pow(height,2)));
    }
+
 }

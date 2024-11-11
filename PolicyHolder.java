@@ -189,6 +189,21 @@ public class PolicyHolder
    }
    
    
+   /**
+   toString method
+   @return A string containing all of the information in a completed policyholder's profile
+   */
+   public String toString()
+   {
+      String str = "Policyholder's First Name: " + firstName;
+      str += "\nPolicyholder's Last Name: " + lastName;
+      str += "\nPolicyholder's Age: " + age;
+      str += "\nPolicyholder's Smoking Status (Y/N): " + smokingStatus;
+      str += "\nPolicyholder's Height: " + height;
+      str += "\nPolicyholder's Weight: " + weight;
+      str += "\nPolicyholder's BMI: " + findBMI();
+      return str;
+   }
    
    //Calculators
    

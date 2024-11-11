@@ -201,7 +201,7 @@ public class PolicyHolder
       str += "\nPolicyholder's Smoking Status (Y/N): " + smokingStatus;
       str += "\nPolicyholder's Height: " + height;
       str += "\nPolicyholder's Weight: " + weight;
-      str += "\nPolicyholder's BMI: " + findBMI();
+      str += String.format("\nPolicyholder's BMI: %.2f", findBMI());
       return str;
    }
    

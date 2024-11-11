@@ -3,6 +3,7 @@ public class Policy
    private int policyNo;
    private String provider;   
    private PolicyHolder user;
+   private static int policyCount = 0;
    
    //Constructors
   
@@ -15,6 +16,7 @@ public class Policy
       policyNo = 0;
       provider = "";
       user = new PolicyHolder();
+      policyCount++;
    }
    
    /**
@@ -29,6 +31,7 @@ public class Policy
       policyNo = no;
       provider = prov;
       user = new PolicyHolder(u);
+      policyCount++;
    }
    
    
@@ -96,6 +99,15 @@ public class Policy
       return new PolicyHolder(user);
    }
    
+   /**
+   Accessor for how many policy objects have been created this session
+   @return The number of policy objects
+   */
+   
+   public static int getPolicyCount()
+   {
+      return policyCount;
+   }
    
    /**
    toString method
@@ -107,7 +119,7 @@ public class Policy
       String str = "Policy Number: " + policyNo;
       str += "\nProvider Name: " + provider;
       str += "\n" + user;
-      str += "\nPolicy Price: " + findPolicyPrice();
+      str += String.format("\nPolicy Price: $%.2f", findPolicyPrice());
       return str;
    }
    
